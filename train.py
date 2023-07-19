@@ -1,11 +1,7 @@
-global x 
-x = " awesome"
+ a = 100
+ c = 50
 
-def myfunc():
-    global x
-    x = "fantastic"
-    print("python is"+x)
-
-myfunc()
-
-print("Python isn"+x)
+ if a > b:
+    print("a lon hon b")
+ else:
+    print("b lon hon a")
