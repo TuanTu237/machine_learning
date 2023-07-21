@@ -1,10 +1,6 @@
+import numpy as np
 
+arr = np.array([1, 2, 3, 4], ndmin=5)
 
-
-f = open("demo.txt", "a")
-f.write("Woops! I have deleted the content!")
-f.close()
-
-#open and read the file after the overwriting:
-f = open("demo.txt", "r")
-print(f.read())
+print(arr)
+print('number of dimensions :', arr.ndim)
