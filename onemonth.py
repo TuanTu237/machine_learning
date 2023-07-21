@@ -1,8 +1,6 @@
-thislist = ["apple", "banana", "cherry", "orange", "kiwi", "melon", "mango"]
+thisset = {"apple", "banana", "cherry"}
 
-tu = ["asf", "asf", "afs"]
-thislist.extend(tu)
+x = thisset.pop()
 
-
-thislist.sort()
-print(thislist)
+print(x)
+print(thisset)
