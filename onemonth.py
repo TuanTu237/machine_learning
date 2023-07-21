@@ -1,32 +1,16 @@
-class Car:
-  def __init__(self, brand, model):
-    self.brand = brand
-    self.model = model
+import json
 
-  def move(self):
-    print("Drive!")
-
-class Boat:
-  def __init__(self, brand, model):
-    self.brand = brand
-    self.model = model
-
-  def move(self):
-    print("Sail!")
-
-class Plane:
-  def __init__(self, brand, model):
-    self.brand = brand
-    self.model = model
-
-  def move(self):
-    print("Fly!")
-
-car1 = Car("Ford", "Mustang")       #Create a Car class
-boat1 = Boat("Ibiza", "Touring 20") #Create a Boat class
-plane1 = Plane("Boeing", "747")     #Create a Plane class
-
-for x in (car1, boat1, plane1):
-  x.move()
-
-print(car1)
+x = {
+  "name": "John",
+  "age": 30,
+  "married": True,
+  "divorced": False,
+  "children": ("Ann","Billy"),
+  "pets": None,
+  "cars": [
+    {"model": "BMW 230", "mpg": 27.5},
+    {"model": "Ford Edge", "mpg": 24.1}
+  ]
+}
+json.dumps(x, indent=4)
+print(json.dumps(x))
