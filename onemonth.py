@@ -1,16 +1,7 @@
-thisdict ={
-    "brand": "Ford",
-    "model": "Mustang",
-    "year": 2002,
-    "color": ["red", "while","blue"]
-}
-print(len(thisdict))
-print(type(thisdict))
+def myfunction(food):
+  for x in food:
+    print(x)
 
-mydict = dict(name = "tu" , age = 21 ,country = "vn")
-print(mydict)
-x = mydict["name"]
-y = mydict.get("age")
-z = mydict.keys()
-print(x)
-print(y,z)
+fruits = ["apple ", "banana", "cherry"]
+
+myfunction(fruits)
