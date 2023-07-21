@@ -1,7 +1,11 @@
-def myfunction(food):
-  for x in food:
-    print(x)
+class Person:
+  def __init__(self, name , age):
+    self.name = name
+    self.age = age
+  def __str__(self):
+    return f"{self.name}{self.age}"
+  def myfunc(seft):
+    print("hello " + seft.name)
+p1 = Person("tu", 21)
 
-fruits = ["apple ", "banana", "cherry"]
-
-myfunction(fruits)
+p1.myfunc()
