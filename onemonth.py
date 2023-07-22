@@ -1,6 +1,7 @@
 import numpy as np
 
-arr = np.array([[1, 2, 3, 4], [5, 6, 7, 8]])
+arr = np.array([1, 3, 5, 7])
 
-for idx, x in np.ndenumerate(arr):
-  print(idx, x)
+x = np.searchsorted(arr, [2, 4, 6])
+
+print(x)
