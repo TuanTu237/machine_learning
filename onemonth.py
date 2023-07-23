@@ -1,7 +1,9 @@
 import numpy as np
 
-arr = np.array([1, 3, 5, 7])
+arr = np.array([41, 42, 43, 44])
 
-x = np.searchsorted(arr, [2, 4, 6])
+x = [True, False, True, False]
 
-print(x)
+newarr = arr[x]
+
+print(newarr)
