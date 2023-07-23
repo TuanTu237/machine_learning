@@ -1,15 +1,11 @@
-import numpy as np
+import mysql.connector
 
-arr = np.array([1,2,3,4,5,6])
+mydb = mysql.connector.connect(
+  host="localhost",
+  user="yourusername",
+  password="yourpassword"
+)
 
-filter_arr = []
+mycursor = mydb.cursor()
 
-for element in arr:
-    if element %2 ==0:
-        filter_arr.append(True)
-    else:
-        filter_arr.append(False)
-
-newarr = arr[filter_arr]
-print(filter_arr)
-print(newarr)
+mycursor.execute("CREATE DATABASE mydatabase")
