@@ -1,5 +1,4 @@
 from numpy import random
-
-x = random.randint(1900)
+x = random.randint(100, size=(5))
 
 print(x)
