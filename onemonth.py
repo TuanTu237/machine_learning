@@ -1,11 +1,5 @@
-import mysql.connector
+from numpy import random
 
-mydb = mysql.connector.connect(
-  host="localhost",
-  user="yourusername",
-  password="yourpassword"
-)
+x = random.randint(1900)
 
-mycursor = mydb.cursor()
-
-mycursor.execute("CREATE DATABASE mydatabase")
+print(x)
