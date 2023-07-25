@@ -1,5 +1,5 @@
-import numpy as np
+import pandas as pd
 
-x = np.sin(np.pi/2)
-
-print(x)
+df = pd.read_csv('date.csv')
+new_df = df.dropna()
+print(new_df.to_string())
