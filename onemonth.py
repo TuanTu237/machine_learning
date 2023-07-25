@@ -1,4 +1,7 @@
-from numpy import random
+import numpy as np
 
-x = random.poisson(lam=2, size=10)
+arr1 = np.array([10, 11, 12, 13, 14, 15])
+arr2 = np.array([20, 21, 22, 23, 24, 25])
+x = np.add(arr1, arr2)
+
 print(x)
