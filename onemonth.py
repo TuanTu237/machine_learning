@@ -1,5 +1,3 @@
-import pandas as pd
+from scipy import constants
 
-df = pd.read_csv('date.csv')
-new_df = df.dropna()
-print(new_df.to_string())
+print(constants.liter)
