@@ -1,12 +1,13 @@
-from scipy.optimize import root
-from math import cos
+import numpy as np
+from scipy.sparse.csgraph import dijkstra
+from scipy.sparse import csr_matrix
 
+arr = np.array([
+    [0, 1, 2],
+    [1, 0, 0],
+    [2, 0, 0]
+])
 
-def eqn(x):
-    return x + cos(x)
+newarr = csr_matrix(arr)
 
-
-myroot = root(eqn, 0)
-
-print(myroot.x)
-print(myroot)
+print(dijkstra(newarr, return_predecessors=True, indices=0))
