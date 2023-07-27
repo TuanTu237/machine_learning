@@ -1,13 +1,20 @@
 import numpy as np
-from scipy.sparse.csgraph import floyd_warshall
-from scipy.sparse import csr_matrix
+from scipy.spatial import ConvexHull
+import matplotlib.pyplot as plt
 
-arr = np.array([
-    [0, 1, 2],
-    [1, 0, 0],
-    [2, 0, 0]
+points = np.array([
+    [2, 3],
+    [2, 4],
+    [2, 24],
+    [5, 1]
 ])
 
-newarr = csr_matrix(arr)
+hull = ConvexHull(points)
+hull_points = hull.simplices
 
-print(floyd_warshall(newarr, return_predecessors=True))
+plt.scatter(points[:, 0], points[:, 1])
+
+for simplex in hull_points:
+    plt.plot(points[simplex, 0], points[simplex, 1], 'k-')
+
+plt.show()
