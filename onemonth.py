@@ -1,5 +1,5 @@
 import numpy as np
-from scipy.sparse.csgraph import dijkstra
+from scipy.sparse.csgraph import floyd_warshall
 from scipy.sparse import csr_matrix
 
 arr = np.array([
@@ -10,4 +10,4 @@ arr = np.array([
 
 newarr = csr_matrix(arr)
 
-print(dijkstra(newarr, return_predecessors=True, indices=0))
+print(floyd_warshall(newarr, return_predecessors=True))
