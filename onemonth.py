@@ -1,8 +1,10 @@
-import numpy as np
-from scipy.stats import skew, kurtosis
+import numpy 
+import matplotlib.pyplot as plt
+numpy.random.seed(2)
 
-v = np.random.normal(size=100)
+x = numpy.random.normal(3, 1, 100)
+y = numpy.random.normal(150, 40, 100) / x
 
-print(skew(v))
+plt.scatter(x, y)
 
-print(kurtosis(v))
+plt.show()
