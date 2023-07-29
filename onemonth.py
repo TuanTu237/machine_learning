@@ -1,10 +1,22 @@
-import numpy 
+import pandas as pd
+from sklearn import tree
+from sklearn.tree import DecisionTreeClassifier
 import matplotlib.pyplot as plt
-numpy.random.seed(2)
 
-x = numpy.random.normal(3, 1, 100)
-y = numpy.random.normal(150, 40, 100) / x
+df = pd.read_csv("data.csv")
 
-plt.scatter(x, y)
+d = {'Uk': 0, 'USA': 1, 'N': 2}
+df['Nationality'] = df['Nationality'].map(d)
 
-plt.show()
+d = {'YES': 1, 'NO': 0}
+df['Go'] = df['Go'].map(d)
+
+features = ['Age', 'Experience', 'Rank', 'Nationality']
+
+X = df[features]
+y = df['Go']
+
+dtree = DecisionTreeClassifier()
+dtree = dtree.fit(X, y)
+
+tree.plot_tree(dtree, feature_names=fretures)
