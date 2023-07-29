@@ -1,22 +1,14 @@
-import pandas as pd
-from sklearn import tree
-from sklearn.tree import DecisionTreeClassifier
 import matplotlib.pyplot as plt
+import numpy as np
+from sklearn import metrics
 
-df = pd.read_csv("data.csv")
+actual = np.random.binomial(1, .9, size=1000)
+predicted = np.random.binomial(1, .0, size=1000)
 
-d = {'Uk': 0, 'USA': 1, 'N': 2}
-df['Nationality'] = df['Nationality'].map(d)
+confusion_matrix = metrics.confusion_matrix(actual, predicted)
 
-d = {'YES': 1, 'NO': 0}
-df['Go'] = df['Go'].map(d)
+cm_display = metrics.ConfusionMatrixDisplay(
+    confusion_matrix=confusion_matrix, display_labels=[False, True])
 
-features = ['Age', 'Experience', 'Rank', 'Nationality']
-
-X = df[features]
-y = df['Go']
-
-dtree = DecisionTreeClassifier()
-dtree = dtree.fit(X, y)
-
-tree.plot_tree(dtree, feature_names=fretures)
+cm_display.plot()
+plt.show()
