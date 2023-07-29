@@ -1,12 +1,17 @@
-from sklearn import datasets
-from sklearn.linear_model import LogisticRegression
+from sklearn.cluster import KMeans
 
-iris = datasets.load_iris()
+x = [4, 5, 10, 4, 3, 11, 14, 6, 10, 12]
+y = [21, 19, 24, 17, 16, 25, 24, 22, 21, 21]
+data = list(zip(x, y))
+inertias = []
 
-X = iris['data']
-y = iris['target']
+for i in range(1, 11):
+    kmeans = KMeans(n_clusters=i)
+    kmeans.fit(data)
+    inertias.append(kmeans.inertia_)
 
-logit = LogisticRegression(max_iter=10000)
-
-print(logit.fit(X, y))
-print(logit.score(X, y))
+plt.plot(range(1, 11), inertias, marker='o')
+plt.title('Elbrow method')
+plt.xlabel('number of clusters')
+plt.ylabel('inertia')
+plt.show()
